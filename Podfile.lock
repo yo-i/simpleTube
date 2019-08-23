@@ -1,0 +1,53 @@
+PODS:
+  - HMSegmentedControl (1.5.5)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SSZipArchive (2.2.2)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (4.3.0)
+  - XCGLogger (6.0.2):
+    - XCGLogger/Core (= 6.0.2)
+  - XCGLogger/Core (6.0.2):
+    - ObjcExceptionBridging
+  - youtube-ios-player-helper (0.1.6)
+
+DEPENDENCIES:
+  - HMSegmentedControl
+  - RxCocoa (~> 4.5)
+  - RxSwift (~> 4.5)
+  - SSZipArchive
+  - SVProgressHUD
+  - SwiftyJSON (~> 4.0)
+  - XCGLogger (= 6.0.2)
+  - youtube-ios-player-helper (~> 0.1.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - HMSegmentedControl
+    - ObjcExceptionBridging
+    - RxCocoa
+    - RxSwift
+    - SSZipArchive
+    - SVProgressHUD
+    - SwiftyJSON
+    - XCGLogger
+    - youtube-ios-player-helper
+
+SPEC CHECKSUMS:
+  HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  XCGLogger: c9601cae9a8912de34a58666ba931ed3d624dd31
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
+
+PODFILE CHECKSUM: 0a92b0cfd7e23863b3791f42b948d08249abd61a
+
+COCOAPODS: 1.5.3
