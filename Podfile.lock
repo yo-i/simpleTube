@@ -1,4 +1,7 @@
 PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - HMSegmentedControl (1.5.5)
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
@@ -16,6 +19,7 @@ PODS:
   - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
+  - FMDB
   - HMSegmentedControl
   - RxCocoa (~> 4.5)
   - RxSwift (~> 4.5)
@@ -27,6 +31,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - FMDB
     - HMSegmentedControl
     - ObjcExceptionBridging
     - RxCocoa
@@ -38,6 +43,7 @@ SPEC REPOS:
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
@@ -48,6 +54,6 @@ SPEC CHECKSUMS:
   XCGLogger: c9601cae9a8912de34a58666ba931ed3d624dd31
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 0a92b0cfd7e23863b3791f42b948d08249abd61a
+PODFILE CHECKSUM: 4206bbe66b1a036b6f8e649eed0c9bffdbf7729c
 
 COCOAPODS: 1.5.3

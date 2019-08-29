@@ -10,9 +10,64 @@
 		3BECD62BB34F4404CA84BD0B /* Pods_simpleTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5ECF7F9864D2BFC134B55A /* Pods_simpleTube.framework */; };
 		A18EF429230F697F00601F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18EF428230F697F00601F88 /* AppDelegate.swift */; };
 		A18EF42B230F697F00601F88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18EF42A230F697F00601F88 /* ViewController.swift */; };
-		A18EF42E230F697F00601F88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18EF42C230F697F00601F88 /* Main.storyboard */; };
 		A18EF430230F697F00601F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18EF42F230F697F00601F88 /* Assets.xcassets */; };
 		A18EF433230F697F00601F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18EF431230F697F00601F88 /* LaunchScreen.storyboard */; };
+		A1EC73ED2317672B00B8C1DB /* AppInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73B02317672A00B8C1DB /* AppInitial.swift */; };
+		A1EC73EE2317672B00B8C1DB /* FFApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73B12317672B00B8C1DB /* FFApplication.swift */; };
+		A1EC73EF2317672B00B8C1DB /* FFCalendarTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73B42317672B00B8C1DB /* FFCalendarTextField.swift */; };
+		A1EC73F02317672B00B8C1DB /* FFPadPullDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73B52317672B00B8C1DB /* FFPadPullDownTextField.swift */; };
+		A1EC73F12317672B00B8C1DB /* FFPadSeachPullDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73B62317672B00B8C1DB /* FFPadSeachPullDownTextField.swift */; };
+		A1EC73F22317672B00B8C1DB /* FFPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73B72317672B00B8C1DB /* FFPickerTextField.swift */; };
+		A1EC73F32317672B00B8C1DB /* FFPopNumPadTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73B82317672B00B8C1DB /* FFPopNumPadTextField.swift */; };
+		A1EC73F42317672B00B8C1DB /* FFPopPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73B92317672B00B8C1DB /* FFPopPickerTextField.swift */; };
+		A1EC73F52317672B00B8C1DB /* FFAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73BB2317672B00B8C1DB /* FFAlert.swift */; };
+		A1EC73F62317672B00B8C1DB /* FFBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73BC2317672B00B8C1DB /* FFBadge.swift */; };
+		A1EC73F72317672B00B8C1DB /* FFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73BD2317672B00B8C1DB /* FFButton.swift */; };
+		A1EC73F82317672B00B8C1DB /* FFCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73BE2317672B00B8C1DB /* FFCalendar.swift */; };
+		A1EC73FA2317672B00B8C1DB /* FFDeliveryCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C02317672B00B8C1DB /* FFDeliveryCalendar.swift */; };
+		A1EC73FB2317672B00B8C1DB /* FFDraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C12317672B00B8C1DB /* FFDraggableView.swift */; };
+		A1EC73FC2317672B00B8C1DB /* FFDrawerMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C22317672B00B8C1DB /* FFDrawerMenuButton.swift */; };
+		A1EC73FD2317672B00B8C1DB /* FFDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C32317672B00B8C1DB /* FFDrawView.swift */; };
+		A1EC73FE2317672B00B8C1DB /* FFFlexCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C42317672B00B8C1DB /* FFFlexCalendar.swift */; };
+		A1EC73FF2317672B00B8C1DB /* FFFlexPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C52317672B00B8C1DB /* FFFlexPicker.swift */; };
+		A1EC74002317672B00B8C1DB /* FFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C62317672B00B8C1DB /* FFFont.swift */; };
+		A1EC74012317672B00B8C1DB /* FFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C72317672B00B8C1DB /* FFImageView.swift */; };
+		A1EC74022317672B00B8C1DB /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C82317672B00B8C1DB /* FFLabel.swift */; };
+		A1EC74032317672B00B8C1DB /* FFMatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73C92317672B00B8C1DB /* FFMatrixView.swift */; };
+		A1EC74042317672B00B8C1DB /* FFNumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73CA2317672B00B8C1DB /* FFNumPad.swift */; };
+		A1EC74052317672B00B8C1DB /* FFNumPadTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73CB2317672B00B8C1DB /* FFNumPadTextField.swift */; };
+		A1EC74062317672B00B8C1DB /* FFPadTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73CC2317672B00B8C1DB /* FFPadTextField.swift */; };
+		A1EC74072317672B00B8C1DB /* FFPadTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73CD2317672B00B8C1DB /* FFPadTextView.swift */; };
+		A1EC74082317672B00B8C1DB /* FFPickerKeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73CE2317672B00B8C1DB /* FFPickerKeyboardTextField.swift */; };
+		A1EC74092317672B00B8C1DB /* FFPopCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73CF2317672B00B8C1DB /* FFPopCalendar.swift */; };
+		A1EC740A2317672B00B8C1DB /* FFPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D02317672B00B8C1DB /* FFPopoverViewController.swift */; };
+		A1EC740B2317672B00B8C1DB /* FFRedrawButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D12317672B00B8C1DB /* FFRedrawButton.swift */; };
+		A1EC740C2317672B00B8C1DB /* FFRichSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D22317672B00B8C1DB /* FFRichSegmentedControl.swift */; };
+		A1EC740D2317672B00B8C1DB /* FFSegementedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D32317672B00B8C1DB /* FFSegementedControl.swift */; };
+		A1EC740E2317672B00B8C1DB /* FFSimplePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D42317672B00B8C1DB /* FFSimplePickerView.swift */; };
+		A1EC740F2317672B00B8C1DB /* FFSimpleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D52317672B00B8C1DB /* FFSimpleTableView.swift */; };
+		A1EC74102317672B00B8C1DB /* FFSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D62317672B00B8C1DB /* FFSwitch.swift */; };
+		A1EC74112317672B00B8C1DB /* FFSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D72317672B00B8C1DB /* FFSwitchButton.swift */; };
+		A1EC74122317672B00B8C1DB /* FFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D82317672B00B8C1DB /* FFTextField.swift */; };
+		A1EC74132317672B00B8C1DB /* FFTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73D92317672B00B8C1DB /* FFTextView.swift */; };
+		A1EC74142317672B00B8C1DB /* FFAesEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73DC2317672B00B8C1DB /* FFAesEncrypt.swift */; };
+		A1EC74152317672B00B8C1DB /* FFCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73DD2317672B00B8C1DB /* FFCore.swift */; };
+		A1EC74162317672B00B8C1DB /* FFDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73DE2317672B00B8C1DB /* FFDeviceManager.swift */; };
+		A1EC74172317672B00B8C1DB /* FFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73DF2317672B00B8C1DB /* FFError.swift */; };
+		A1EC74182317672B00B8C1DB /* FFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73E02317672B00B8C1DB /* FFExtension.swift */; };
+		A1EC74192317672B00B8C1DB /* FFFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73E12317672B00B8C1DB /* FFFileManager.swift */; };
+		A1EC741A2317672B00B8C1DB /* FFSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73E22317672B00B8C1DB /* FFSound.swift */; };
+		A1EC741B2317672B00B8C1DB /* FFDBManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73E42317672B00B8C1DB /* FFDBManagerBase.swift */; };
+		A1EC741C2317672B00B8C1DB /* FFDBProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73E52317672B00B8C1DB /* FFDBProtocol.swift */; };
+		A1EC741D2317672B00B8C1DB /* FFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73E72317672B00B8C1DB /* FFLog.swift */; };
+		A1EC741E2317672B00B8C1DB /* FFPrinterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73E92317672B00B8C1DB /* FFPrinterManager.swift */; };
+		A1EC741F2317672B00B8C1DB /* FFReportCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73EA2317672B00B8C1DB /* FFReportCanvas.swift */; };
+		A1EC74202317672B00B8C1DB /* FFWebCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC73EC2317672B00B8C1DB /* FFWebCore.swift */; };
+		A1EC74262317690400B8C1DB /* FFBaseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC74222317690400B8C1DB /* FFBaseMainViewController.swift */; };
+		A1EC74272317690400B8C1DB /* FFBaseMainViewControllerDesigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC74232317690400B8C1DB /* FFBaseMainViewControllerDesigner.swift */; };
+		A1EC74282317690400B8C1DB /* FFBaseSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC74242317690400B8C1DB /* FFBaseSubViewController.swift */; };
+		A1EC74292317690400B8C1DB /* FFBaseSubViewControllerDesigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC74252317690400B8C1DB /* FFBaseSubViewControllerDesigner.swift */; };
+		A1EC742D23176BE600B8C1DB /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC742C23176BE600B8C1DB /* DrawView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +75,65 @@
 		A18EF425230F697F00601F88 /* simpleTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18EF428230F697F00601F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18EF42A230F697F00601F88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A18EF42D230F697F00601F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A18EF42F230F697F00601F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A18EF432230F697F00601F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A18EF434230F697F00601F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1EC73B02317672A00B8C1DB /* AppInitial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInitial.swift; sourceTree = "<group>"; };
+		A1EC73B12317672B00B8C1DB /* FFApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFApplication.swift; sourceTree = "<group>"; };
+		A1EC73B42317672B00B8C1DB /* FFCalendarTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCalendarTextField.swift; sourceTree = "<group>"; };
+		A1EC73B52317672B00B8C1DB /* FFPadPullDownTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPadPullDownTextField.swift; sourceTree = "<group>"; };
+		A1EC73B62317672B00B8C1DB /* FFPadSeachPullDownTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPadSeachPullDownTextField.swift; sourceTree = "<group>"; };
+		A1EC73B72317672B00B8C1DB /* FFPickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPickerTextField.swift; sourceTree = "<group>"; };
+		A1EC73B82317672B00B8C1DB /* FFPopNumPadTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPopNumPadTextField.swift; sourceTree = "<group>"; };
+		A1EC73B92317672B00B8C1DB /* FFPopPickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPopPickerTextField.swift; sourceTree = "<group>"; };
+		A1EC73BB2317672B00B8C1DB /* FFAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFAlert.swift; sourceTree = "<group>"; };
+		A1EC73BC2317672B00B8C1DB /* FFBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFBadge.swift; sourceTree = "<group>"; };
+		A1EC73BD2317672B00B8C1DB /* FFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFButton.swift; sourceTree = "<group>"; };
+		A1EC73BE2317672B00B8C1DB /* FFCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCalendar.swift; sourceTree = "<group>"; };
+		A1EC73C02317672B00B8C1DB /* FFDeliveryCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDeliveryCalendar.swift; sourceTree = "<group>"; };
+		A1EC73C12317672B00B8C1DB /* FFDraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDraggableView.swift; sourceTree = "<group>"; };
+		A1EC73C22317672B00B8C1DB /* FFDrawerMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDrawerMenuButton.swift; sourceTree = "<group>"; };
+		A1EC73C32317672B00B8C1DB /* FFDrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDrawView.swift; sourceTree = "<group>"; };
+		A1EC73C42317672B00B8C1DB /* FFFlexCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFFlexCalendar.swift; sourceTree = "<group>"; };
+		A1EC73C52317672B00B8C1DB /* FFFlexPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFFlexPicker.swift; sourceTree = "<group>"; };
+		A1EC73C62317672B00B8C1DB /* FFFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFFont.swift; sourceTree = "<group>"; };
+		A1EC73C72317672B00B8C1DB /* FFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFImageView.swift; sourceTree = "<group>"; };
+		A1EC73C82317672B00B8C1DB /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
+		A1EC73C92317672B00B8C1DB /* FFMatrixView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFMatrixView.swift; sourceTree = "<group>"; };
+		A1EC73CA2317672B00B8C1DB /* FFNumPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFNumPad.swift; sourceTree = "<group>"; };
+		A1EC73CB2317672B00B8C1DB /* FFNumPadTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFNumPadTextField.swift; sourceTree = "<group>"; };
+		A1EC73CC2317672B00B8C1DB /* FFPadTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPadTextField.swift; sourceTree = "<group>"; };
+		A1EC73CD2317672B00B8C1DB /* FFPadTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPadTextView.swift; sourceTree = "<group>"; };
+		A1EC73CE2317672B00B8C1DB /* FFPickerKeyboardTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPickerKeyboardTextField.swift; sourceTree = "<group>"; };
+		A1EC73CF2317672B00B8C1DB /* FFPopCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPopCalendar.swift; sourceTree = "<group>"; };
+		A1EC73D02317672B00B8C1DB /* FFPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPopoverViewController.swift; sourceTree = "<group>"; };
+		A1EC73D12317672B00B8C1DB /* FFRedrawButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFRedrawButton.swift; sourceTree = "<group>"; };
+		A1EC73D22317672B00B8C1DB /* FFRichSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFRichSegmentedControl.swift; sourceTree = "<group>"; };
+		A1EC73D32317672B00B8C1DB /* FFSegementedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFSegementedControl.swift; sourceTree = "<group>"; };
+		A1EC73D42317672B00B8C1DB /* FFSimplePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFSimplePickerView.swift; sourceTree = "<group>"; };
+		A1EC73D52317672B00B8C1DB /* FFSimpleTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFSimpleTableView.swift; sourceTree = "<group>"; };
+		A1EC73D62317672B00B8C1DB /* FFSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFSwitch.swift; sourceTree = "<group>"; };
+		A1EC73D72317672B00B8C1DB /* FFSwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFSwitchButton.swift; sourceTree = "<group>"; };
+		A1EC73D82317672B00B8C1DB /* FFTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTextField.swift; sourceTree = "<group>"; };
+		A1EC73D92317672B00B8C1DB /* FFTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTextView.swift; sourceTree = "<group>"; };
+		A1EC73DC2317672B00B8C1DB /* FFAesEncrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFAesEncrypt.swift; sourceTree = "<group>"; };
+		A1EC73DD2317672B00B8C1DB /* FFCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCore.swift; sourceTree = "<group>"; };
+		A1EC73DE2317672B00B8C1DB /* FFDeviceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDeviceManager.swift; sourceTree = "<group>"; };
+		A1EC73DF2317672B00B8C1DB /* FFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFError.swift; sourceTree = "<group>"; };
+		A1EC73E02317672B00B8C1DB /* FFExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFExtension.swift; sourceTree = "<group>"; };
+		A1EC73E12317672B00B8C1DB /* FFFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFFileManager.swift; sourceTree = "<group>"; };
+		A1EC73E22317672B00B8C1DB /* FFSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFSound.swift; sourceTree = "<group>"; };
+		A1EC73E42317672B00B8C1DB /* FFDBManagerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDBManagerBase.swift; sourceTree = "<group>"; };
+		A1EC73E52317672B00B8C1DB /* FFDBProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDBProtocol.swift; sourceTree = "<group>"; };
+		A1EC73E72317672B00B8C1DB /* FFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLog.swift; sourceTree = "<group>"; };
+		A1EC73E92317672B00B8C1DB /* FFPrinterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFPrinterManager.swift; sourceTree = "<group>"; };
+		A1EC73EA2317672B00B8C1DB /* FFReportCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFReportCanvas.swift; sourceTree = "<group>"; };
+		A1EC73EC2317672B00B8C1DB /* FFWebCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFWebCore.swift; sourceTree = "<group>"; };
+		A1EC74222317690400B8C1DB /* FFBaseMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFBaseMainViewController.swift; sourceTree = "<group>"; };
+		A1EC74232317690400B8C1DB /* FFBaseMainViewControllerDesigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFBaseMainViewControllerDesigner.swift; sourceTree = "<group>"; };
+		A1EC74242317690400B8C1DB /* FFBaseSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFBaseSubViewController.swift; sourceTree = "<group>"; };
+		A1EC74252317690400B8C1DB /* FFBaseSubViewControllerDesigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFBaseSubViewControllerDesigner.swift; sourceTree = "<group>"; };
+		A1EC742C23176BE600B8C1DB /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		B5422AC00CE0DA3D5B3D6686 /* Pods-simpleTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simpleTube/Pods-simpleTube.debug.xcconfig"; sourceTree = "<group>"; };
 		EC5ECF7F9864D2BFC134B55A /* Pods_simpleTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simpleTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,14 +180,157 @@
 		A18EF427230F697F00601F88 /* simpleTube */ = {
 			isa = PBXGroup;
 			children = (
-				A18EF428230F697F00601F88 /* AppDelegate.swift */,
-				A18EF42A230F697F00601F88 /* ViewController.swift */,
-				A18EF42C230F697F00601F88 /* Main.storyboard */,
-				A18EF42F230F697F00601F88 /* Assets.xcassets */,
-				A18EF431230F697F00601F88 /* LaunchScreen.storyboard */,
+				A1EC742A231769B300B8C1DB /* Library */,
 				A18EF434230F697F00601F88 /* Info.plist */,
+				A18EF428230F697F00601F88 /* AppDelegate.swift */,
+				A1EC73B02317672A00B8C1DB /* AppInitial.swift */,
+				A1EC73B12317672B00B8C1DB /* FFApplication.swift */,
+				A18EF42A230F697F00601F88 /* ViewController.swift */,
+				A18EF42F230F697F00601F88 /* Assets.xcassets */,
+				A1EC74212317690400B8C1DB /* BaseViewController */,
+				A1EC73DA2317672B00B8C1DB /* Core */,
+				A18EF431230F697F00601F88 /* LaunchScreen.storyboard */,
+				A1EC73B22317672B00B8C1DB /* UIPart */,
 			);
 			path = simpleTube;
+			sourceTree = "<group>";
+		};
+		A1EC73B22317672B00B8C1DB /* UIPart */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC73B32317672B00B8C1DB /* Compound */,
+				A1EC73BA2317672B00B8C1DB /* Simple */,
+			);
+			path = UIPart;
+			sourceTree = "<group>";
+		};
+		A1EC73B32317672B00B8C1DB /* Compound */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC73B42317672B00B8C1DB /* FFCalendarTextField.swift */,
+				A1EC73B52317672B00B8C1DB /* FFPadPullDownTextField.swift */,
+				A1EC73B62317672B00B8C1DB /* FFPadSeachPullDownTextField.swift */,
+				A1EC73B72317672B00B8C1DB /* FFPickerTextField.swift */,
+				A1EC73B82317672B00B8C1DB /* FFPopNumPadTextField.swift */,
+				A1EC73B92317672B00B8C1DB /* FFPopPickerTextField.swift */,
+			);
+			path = Compound;
+			sourceTree = "<group>";
+		};
+		A1EC73BA2317672B00B8C1DB /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC73BB2317672B00B8C1DB /* FFAlert.swift */,
+				A1EC73BC2317672B00B8C1DB /* FFBadge.swift */,
+				A1EC73BD2317672B00B8C1DB /* FFButton.swift */,
+				A1EC73BE2317672B00B8C1DB /* FFCalendar.swift */,
+				A1EC73C02317672B00B8C1DB /* FFDeliveryCalendar.swift */,
+				A1EC73C12317672B00B8C1DB /* FFDraggableView.swift */,
+				A1EC73C22317672B00B8C1DB /* FFDrawerMenuButton.swift */,
+				A1EC73C32317672B00B8C1DB /* FFDrawView.swift */,
+				A1EC73C42317672B00B8C1DB /* FFFlexCalendar.swift */,
+				A1EC73C52317672B00B8C1DB /* FFFlexPicker.swift */,
+				A1EC73C62317672B00B8C1DB /* FFFont.swift */,
+				A1EC73C72317672B00B8C1DB /* FFImageView.swift */,
+				A1EC73C82317672B00B8C1DB /* FFLabel.swift */,
+				A1EC73C92317672B00B8C1DB /* FFMatrixView.swift */,
+				A1EC73CA2317672B00B8C1DB /* FFNumPad.swift */,
+				A1EC73CB2317672B00B8C1DB /* FFNumPadTextField.swift */,
+				A1EC73CC2317672B00B8C1DB /* FFPadTextField.swift */,
+				A1EC73CD2317672B00B8C1DB /* FFPadTextView.swift */,
+				A1EC73CE2317672B00B8C1DB /* FFPickerKeyboardTextField.swift */,
+				A1EC73CF2317672B00B8C1DB /* FFPopCalendar.swift */,
+				A1EC73D02317672B00B8C1DB /* FFPopoverViewController.swift */,
+				A1EC73D12317672B00B8C1DB /* FFRedrawButton.swift */,
+				A1EC73D22317672B00B8C1DB /* FFRichSegmentedControl.swift */,
+				A1EC73D32317672B00B8C1DB /* FFSegementedControl.swift */,
+				A1EC73D42317672B00B8C1DB /* FFSimplePickerView.swift */,
+				A1EC73D52317672B00B8C1DB /* FFSimpleTableView.swift */,
+				A1EC73D62317672B00B8C1DB /* FFSwitch.swift */,
+				A1EC73D72317672B00B8C1DB /* FFSwitchButton.swift */,
+				A1EC73D82317672B00B8C1DB /* FFTextField.swift */,
+				A1EC73D92317672B00B8C1DB /* FFTextView.swift */,
+			);
+			path = Simple;
+			sourceTree = "<group>";
+		};
+		A1EC73DA2317672B00B8C1DB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC73DB2317672B00B8C1DB /* Core */,
+				A1EC73E32317672B00B8C1DB /* DB */,
+				A1EC73E62317672B00B8C1DB /* Log */,
+				A1EC73E82317672B00B8C1DB /* Printer */,
+				A1EC73EB2317672B00B8C1DB /* Web */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A1EC73DB2317672B00B8C1DB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC73DC2317672B00B8C1DB /* FFAesEncrypt.swift */,
+				A1EC73DD2317672B00B8C1DB /* FFCore.swift */,
+				A1EC73DE2317672B00B8C1DB /* FFDeviceManager.swift */,
+				A1EC73DF2317672B00B8C1DB /* FFError.swift */,
+				A1EC73E02317672B00B8C1DB /* FFExtension.swift */,
+				A1EC73E12317672B00B8C1DB /* FFFileManager.swift */,
+				A1EC73E22317672B00B8C1DB /* FFSound.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A1EC73E32317672B00B8C1DB /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC73E42317672B00B8C1DB /* FFDBManagerBase.swift */,
+				A1EC73E52317672B00B8C1DB /* FFDBProtocol.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		A1EC73E62317672B00B8C1DB /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC73E72317672B00B8C1DB /* FFLog.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		A1EC73E82317672B00B8C1DB /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC73E92317672B00B8C1DB /* FFPrinterManager.swift */,
+				A1EC73EA2317672B00B8C1DB /* FFReportCanvas.swift */,
+			);
+			path = Printer;
+			sourceTree = "<group>";
+		};
+		A1EC73EB2317672B00B8C1DB /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC73EC2317672B00B8C1DB /* FFWebCore.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		A1EC74212317690400B8C1DB /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC74222317690400B8C1DB /* FFBaseMainViewController.swift */,
+				A1EC74232317690400B8C1DB /* FFBaseMainViewControllerDesigner.swift */,
+				A1EC74242317690400B8C1DB /* FFBaseSubViewController.swift */,
+				A1EC74252317690400B8C1DB /* FFBaseSubViewControllerDesigner.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		A1EC742A231769B300B8C1DB /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC742C23176BE600B8C1DB /* DrawView.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		DA02002BF6638C2C0EE94B56 /* Frameworks */ = {
@@ -152,7 +405,6 @@
 			files = (
 				A18EF433230F697F00601F88 /* LaunchScreen.storyboard in Resources */,
 				A18EF430230F697F00601F88 /* Assets.xcassets in Resources */,
-				A18EF42E230F697F00601F88 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +450,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-simpleTube/Pods-simpleTube-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -210,6 +463,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -232,22 +486,70 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1EC73FE2317672B00B8C1DB /* FFFlexCalendar.swift in Sources */,
+				A1EC741B2317672B00B8C1DB /* FFDBManagerBase.swift in Sources */,
+				A1EC74122317672B00B8C1DB /* FFTextField.swift in Sources */,
+				A1EC740D2317672B00B8C1DB /* FFSegementedControl.swift in Sources */,
+				A1EC74132317672B00B8C1DB /* FFTextView.swift in Sources */,
+				A1EC74062317672B00B8C1DB /* FFPadTextField.swift in Sources */,
+				A1EC73ED2317672B00B8C1DB /* AppInitial.swift in Sources */,
+				A1EC73F42317672B00B8C1DB /* FFPopPickerTextField.swift in Sources */,
 				A18EF42B230F697F00601F88 /* ViewController.swift in Sources */,
+				A1EC74152317672B00B8C1DB /* FFCore.swift in Sources */,
+				A1EC740E2317672B00B8C1DB /* FFSimplePickerView.swift in Sources */,
+				A1EC74002317672B00B8C1DB /* FFFont.swift in Sources */,
+				A1EC74262317690400B8C1DB /* FFBaseMainViewController.swift in Sources */,
+				A1EC73F82317672B00B8C1DB /* FFCalendar.swift in Sources */,
+				A1EC73F62317672B00B8C1DB /* FFBadge.swift in Sources */,
+				A1EC74012317672B00B8C1DB /* FFImageView.swift in Sources */,
+				A1EC740B2317672B00B8C1DB /* FFRedrawButton.swift in Sources */,
+				A1EC74162317672B00B8C1DB /* FFDeviceManager.swift in Sources */,
+				A1EC741F2317672B00B8C1DB /* FFReportCanvas.swift in Sources */,
+				A1EC74042317672B00B8C1DB /* FFNumPad.swift in Sources */,
+				A1EC74182317672B00B8C1DB /* FFExtension.swift in Sources */,
+				A1EC73F02317672B00B8C1DB /* FFPadPullDownTextField.swift in Sources */,
+				A1EC740C2317672B00B8C1DB /* FFRichSegmentedControl.swift in Sources */,
+				A1EC74192317672B00B8C1DB /* FFFileManager.swift in Sources */,
+				A1EC73EE2317672B00B8C1DB /* FFApplication.swift in Sources */,
+				A1EC74082317672B00B8C1DB /* FFPickerKeyboardTextField.swift in Sources */,
+				A1EC73FD2317672B00B8C1DB /* FFDrawView.swift in Sources */,
+				A1EC740A2317672B00B8C1DB /* FFPopoverViewController.swift in Sources */,
+				A1EC74092317672B00B8C1DB /* FFPopCalendar.swift in Sources */,
+				A1EC74292317690400B8C1DB /* FFBaseSubViewControllerDesigner.swift in Sources */,
+				A1EC741C2317672B00B8C1DB /* FFDBProtocol.swift in Sources */,
 				A18EF429230F697F00601F88 /* AppDelegate.swift in Sources */,
+				A1EC74022317672B00B8C1DB /* FFLabel.swift in Sources */,
+				A1EC73F22317672B00B8C1DB /* FFPickerTextField.swift in Sources */,
+				A1EC73F72317672B00B8C1DB /* FFButton.swift in Sources */,
+				A1EC74052317672B00B8C1DB /* FFNumPadTextField.swift in Sources */,
+				A1EC74032317672B00B8C1DB /* FFMatrixView.swift in Sources */,
+				A1EC74272317690400B8C1DB /* FFBaseMainViewControllerDesigner.swift in Sources */,
+				A1EC74102317672B00B8C1DB /* FFSwitch.swift in Sources */,
+				A1EC741E2317672B00B8C1DB /* FFPrinterManager.swift in Sources */,
+				A1EC73F12317672B00B8C1DB /* FFPadSeachPullDownTextField.swift in Sources */,
+				A1EC74282317690400B8C1DB /* FFBaseSubViewController.swift in Sources */,
+				A1EC741D2317672B00B8C1DB /* FFLog.swift in Sources */,
+				A1EC73F52317672B00B8C1DB /* FFAlert.swift in Sources */,
+				A1EC740F2317672B00B8C1DB /* FFSimpleTableView.swift in Sources */,
+				A1EC74112317672B00B8C1DB /* FFSwitchButton.swift in Sources */,
+				A1EC73FB2317672B00B8C1DB /* FFDraggableView.swift in Sources */,
+				A1EC74072317672B00B8C1DB /* FFPadTextView.swift in Sources */,
+				A1EC73FA2317672B00B8C1DB /* FFDeliveryCalendar.swift in Sources */,
+				A1EC74172317672B00B8C1DB /* FFError.swift in Sources */,
+				A1EC73F32317672B00B8C1DB /* FFPopNumPadTextField.swift in Sources */,
+				A1EC73FF2317672B00B8C1DB /* FFFlexPicker.swift in Sources */,
+				A1EC74202317672B00B8C1DB /* FFWebCore.swift in Sources */,
+				A1EC73EF2317672B00B8C1DB /* FFCalendarTextField.swift in Sources */,
+				A1EC742D23176BE600B8C1DB /* DrawView.swift in Sources */,
+				A1EC741A2317672B00B8C1DB /* FFSound.swift in Sources */,
+				A1EC73FC2317672B00B8C1DB /* FFDrawerMenuButton.swift in Sources */,
+				A1EC74142317672B00B8C1DB /* FFAesEncrypt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A18EF42C230F697F00601F88 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A18EF42D230F697F00601F88 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A18EF431230F697F00601F88 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

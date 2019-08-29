@@ -7,7 +7,7 @@ target 'simpleTube' do
 
   # Pods for simpleTube
   #sqLite
-  #pod 'FMDB'
+  pod 'FMDB'
   #logger
   pod 'XCGLogger', '6.0.2'
   #zipArchive
