@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-@UIApplicationMain
+import AVFoundation
+//@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         //初期画面設定
-        let rootView = ViewController()//ルート画面
+        let rootView = SUListView()//ルート画面
         let navigationController = UINavigationController(rootViewController: rootView)
         window?.backgroundColor = UIColor.white
         
@@ -32,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //ナビゲーションバーの背景色指定
         UINavigationBar.appearance().backgroundColor = UIColor.white
+        
+        
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
+        
         return true
     }
 
@@ -41,6 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         log.info(#function)
         //キャッシュ削除(画像更新されない場合の対応)
         URLCache.shared.removeAllCachedResponses()
+        
+        
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

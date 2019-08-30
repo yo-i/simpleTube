@@ -12,8 +12,8 @@ extension FFBaseMainViewController
     static let trainingImg = UIImage(named: "training_icon.png")
     func createNavigationBarCustomizeArea()
     {
-        navigationBarLeftArea = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 40))
-        navigationBarRightArea = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 40))
+        navigationBarLeftArea = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
+        navigationBarRightArea = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
         
         let leftItem = UIBarButtonItem(customView: navigationBarLeftArea)
         let rightItem = UIBarButtonItem(customView: navigationBarRightArea)

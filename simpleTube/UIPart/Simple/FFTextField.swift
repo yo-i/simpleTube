@@ -9,23 +9,28 @@
 import Foundation
 import UIKit
 
+@objc protocol FFFlexTextFieldDelegate : NSObjectProtocol
+{
+    @objc optional func flexTextFieldValueChanged(textField:FFTextField)
+    @objc optional func keyBoradWillOpen(textField:FFTextField) -> Bool
+}
+
 class FFTextField : UITextField
 {
     var maxLength : Int = Int.max
     var minLength : Int = 0
-    //    var isNumber:Bool = false                                           //数字だけ
-    //    var isHirakana:Bool = false                                         //ひらかなだけ
-    //    var isKatakana:Bool = false                                         //カタカナだけ
-    //    var isRequired:Bool = false
-    //    var isTelNumber:Bool = false
-    //    var isKanjiLevel2:Bool = false                                      //漢字第２水準
-    //    var isKanjiSoftCheck:Bool = false
-    
     var isClear : Bool = false                                        //テキストクリア押下時か
     var notification:NotificationCenter!                              //通知センター、キーボードの表示を監視する
     var superViewInitFrame:CGRect!                                      //自分の親ビュー
-    var shouldMoveMin:CGFloat = 510                                     //親を上にスクロールするの基準
+    var shouldMoveMin:CGFloat = 340                                     //親を上にスクロールするの基準
     var name : String = ""                                             //名前（アラート表示）
+    
+    var isInCell = false                                                //cellのなら初期化時true
+    var tablePy:CGFloat = 0                                             //delegateにtableView.frame.heightを代入
+    
+    var sectionTag:Int = 0                                              //テーブルビューセル内に使用時に使用可能
+    
+    weak var flexDelegate: FFFlexTextFieldDelegate?
     
     override var isEnabled: Bool
         {
@@ -51,6 +56,13 @@ class FFTextField : UITextField
             UIView.animate(withDuration: 0.5
                 , animations: {self.backgroundColor = UIColor.cellSelected}
                 , completion: nil)
+            
+            notification = NotificationCenter.default                         //通知センターのインスタンスを生成する
+            notification.addObserver(self, selector: #selector(FFTextField.keyBoardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)    //キーボードが表示される寸前を監視する、通知が来たらkeyBoardWillShow()を呼び出す
+            notification.addObserver(self, selector: #selector(FFTextField.keyBoardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)    //キーボードが閉じられる寸前を監視する、通知が来たらkeyBoardWillHide()を呼び出す
+            notification.addObserver(self, selector: #selector(FFTextField.hideKeyboard), name: NSNotification.Name("willShowFlexView"), object: nil)
+            
+            
         }
         else
         {
@@ -58,6 +70,8 @@ class FFTextField : UITextField
             UIView.animate(withDuration: 0.5
                 , animations: {self.backgroundColor = UIColor.white}
                 , completion: nil)
+            
+            NotificationCenter.default.removeObserver(self)
         }
     }
     
@@ -86,9 +100,12 @@ class FFTextField : UITextField
         setSelfStyle()                                                  //表示内容を指定する
     }
     
-    override func didMoveToSuperview() {
-        superViewInitFrame = self.superview?.frame
-        
+    override func didMoveToSuperview()
+    {
+        if !isInCell
+        {
+            superViewInitFrame = self.superview?.frame ?? CGRect.zero
+        }
     }
     //外観設定
     func setSelfStyle()
@@ -102,10 +119,6 @@ class FFTextField : UITextField
         //ツールバー作成
         makeToolbar()
         
-        notification = NotificationCenter.default                         //通知センターのインスタンスを生成する
-        notification.addObserver(self, selector: #selector(FFTextField.keyBoardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)    //キーボードが表示される寸前を監視する、通知が来たらkeyBoardWillShow()を呼び出す
-        notification.addObserver(self, selector: #selector(FFTextField.keyBoardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)    //キーボードが閉じられる寸前を監視する、通知が来たらkeyBoardWillHide()を呼び出す
-        notification.addObserver(self, selector: #selector(FFTextField.hideKeyboard), name: NSNotification.Name("willShowFlexView"), object: nil)
     }
     
     
@@ -115,10 +128,12 @@ class FFTextField : UITextField
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
         toolbar.barStyle = UIBarStyle.default
         toolbar.sizeToFit()
+        toolbar.barTintColor = UIColor.actusBlue
         //スペーサー
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         //完了ボタン
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneButtonTapped))
+        doneButton.tintColor = UIColor.white
         toolbar.items = [spacer,doneButton]
         self.inputAccessoryView = toolbar
     }
@@ -127,6 +142,7 @@ class FFTextField : UITextField
     /// 完了ボタン押下
     @objc func doneButtonTapped()
     {
+        flexDelegate?.flexTextFieldValueChanged?(textField: self)
         self.resignFirstResponder()
     }
     
@@ -142,6 +158,7 @@ class FFTextField : UITextField
     @objc func keyBoardWillShow(_ notification:NotificationCenter)
     {
         checkFlexView()
+        
     }
     
     /// 自分以外にフレックスビューが表示されていたら非表示にする
@@ -175,19 +192,44 @@ class FFTextField : UITextField
     //画面を上にスクロール
     func superViewRollUp(_ py:CGFloat)
     {
+        log.info(#function)
         UIView.animate(withDuration: 0.35                                     //0.35秒を掛かって
             , delay: 0                                                      //遅延0秒
             , options: UIViewAnimationOptions()                //アニメションオプション：加速で開始、減速で終了
-            , animations: {self.superview!.frame.origin.y = 250 - py }      //アニメション処理
+            , animations: {
+                
+                if self.isInCell
+                {
+                    currentMainView!.view.frame.origin.y =  -py
+                }
+                else
+                {
+                    self.superview!.frame.origin.y = 250 - py
+                }
+                
+        }      //アニメション処理
             , completion: nil)                                              //アニメション終了処理
     }
     //画面を元に戻す
     func superViewRollBack()
     {
+        log.info(#function)
         UIView.animate(withDuration: 0.35                                     //0.35秒を掛かって
             , delay: 0                                                      //遅延0秒
             , options: UIViewAnimationOptions()                //アニメションオプション：加速で開始、減速で終了
-            , animations: {self.superview!.frame = self.superViewInitFrame } //アニメション処理
+            , animations: {
+                
+                if self.isInCell
+                {
+                    currentMainView!.view.frame.origin.y = 0
+                }
+                else
+                {
+                    self.superview!.frame = self.superViewInitFrame
+                }
+                
+                
+        } //アニメション処理
             , completion: nil)                                              //アニメション終了処理
     }
     
@@ -201,6 +243,7 @@ extension FFTextField : UITextFieldDelegate
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool
     {
         self.inUse = false
+        superViewRollBack()
         return true
     }
     
@@ -212,18 +255,56 @@ extension FFTextField : UITextFieldDelegate
         {
             self.text = ""
             self.isClear = false
+            flexDelegate?.flexTextFieldValueChanged?(textField: self)
             return false
         }
+        let shouldBegin = self.flexDelegate?.keyBoradWillOpen?(textField: self) ?? true
+        if !shouldBegin{ return false}
         
         self.inUse = true
-        self.superViewRollBack()
-        self.superViewInitFrame = self.superview?.frame
-        //テキストフィールドがキーボードに重なる場合
-        if (convert(textField.frame.origin, to: self.window).y + textField.frame.height) > self.shouldMoveMin
+        
+        if !isInCell
         {
-            self.superViewRollUp(textField.frame.origin.y + textField.frame.height)  //親ビューを上にスクロールする
+            self.superViewRollBack()
         }
+        superViewInitFrame = self.superview?.frame
+        
+        if isInCell
+        {
+            self.superViewRollUp(self.tablePy - (currentMainView?.navigationController?.navigationBar.frame.height)!)  //親ビューを上にスクロールする 60はナビゲーションバーの高さ
+        }
+        else
+        {
+//            let aaaa = (convert(textField.frame.origin, to: self.window).y + textField.frame.height)
+            //テキストフィールドがキーボードに重なる場合
+            if (convert(textField.frame.origin, to: self.window).y + textField.frame.height) > self.shouldMoveMin
+            {
+                
+                self.superViewRollUp(textField.frame.origin.y + textField.frame.height)  //親ビューを上にスクロールする
+                
+            }
+        }
+        
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if isInCell
+        {
+            self.superViewRollUp(self.tablePy - (currentMainView?.navigationController?.navigationBar.frame.height)!)  //親ビューを上にスクロールする
+        }
+        else
+        {
+            
+            //テキストフィールドがキーボードに重なる場合
+            if (convert(textField.frame.origin, to: self.window).y + textField.frame.height) > self.shouldMoveMin
+            {
+                
+                self.superViewRollUp(textField.frame.origin.y + textField.frame.height)  //親ビューを上にスクロールする
+                
+            }
+        }
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
@@ -264,4 +345,3 @@ extension FFTextField : UITextFieldDelegate
     }
     
 }
-

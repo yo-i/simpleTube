@@ -937,18 +937,18 @@ extension Date
     
     static func getHolidayMaster()
     {
-                //外部サービス頼り
-                let wc = FFWebCore()
-                let url = "https://holidays-jp.github.io/api/v1/date.json"
-                wc.getAsync(url: url) { (data, res, err) in
-                    if err == nil
-                    {
-                        let jasonData = FFCore.jsonSerialization(jsonObjec: data ?? Data())
-                        let dic = jasonData as! Dictionary<String,String>
-                        gHoildays = dic.keys.map({$0.replacingOccurrences(of: "-", with: "")})
-                    }
-                    wc.session.finishTasksAndInvalidate()
-                }
+//                //外部サービス頼り
+//                let wc = FFWebCore()
+//                let url = "https://holidays-jp.github.io/api/v1/date.json"
+//                wc.getAsync(url: url) { (data, res, err) in
+//                    if err == nil
+//                    {
+//                        let jasonData = FFCore.jsonSerialization(jsonObjec: data ?? Data())
+//                        let dic = jasonData as! Dictionary<String,String>
+//                        gHoildays = dic.keys.map({$0.replacingOccurrences(of: "-", with: "")})
+//                    }
+//                    wc.session.finishTasksAndInvalidate()
+//                }
 //        autoreleasepool(invoking: {
 //
 //            if tryGetHolidayMasterFlag

@@ -29,5 +29,6 @@ func initApplication()
     let gitHashStr = (infoDic["commitHash"] as? String ?? "")
     log.info("Ver:" + gitHashStr)
     
+    _ = SUVideosDao.sheard.createTable()
 }
 

@@ -86,6 +86,15 @@ class FFBaseSubViewController: UIViewController
                 //マスクビューにタップイベントを追加
                 self.maskView.addGestureRecognizer(self.maskTapGesture)
                 self.notificationCenter.post(name: NSNotification.Name(rawValue: "subViewDidShow"), object: nil)
+                
+                for v in self.contentView.subviews
+                {
+                    if v is FFTextField
+                    {
+                        (v as! FFTextField).superViewInitFrame = self.contentView.frame
+                    }
+                }
+                
             })
 
         })

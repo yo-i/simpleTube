@@ -136,7 +136,7 @@ class FFBaseMainViewController :UIViewController
     /// - Parameter branchDivision: サブメニューボタンの区分
     func layoutSubMenuButtons(branchDivision:UInt)
     {
-        self.layoutSubMenuButtons(branchDivision: branchDivision, startPx: 0, showRangWidth: 1000)
+        self.layoutSubMenuButtons(branchDivision: branchDivision, startPx: 0, showRangWidth: Int(self.navigationController?.navigationBar.frame.width ?? 0) - 24)
     }
     
     
