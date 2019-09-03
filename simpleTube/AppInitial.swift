@@ -30,5 +30,9 @@ func initApplication()
     log.info("Ver:" + gitHashStr)
     
     _ = SUVideosDao.sheard.createTable()
+    
 }
+
+
+
 

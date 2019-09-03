@@ -9,21 +9,39 @@
 import UIKit
 import SwiftyJSON
 import SVProgressHUD
+
+extension Array
+{
+    func split(num:Int)->Array<Array<Element>>
+    {
+        var workArray = self
+        var result:Array<Array<Element>> = []
+        while workArray.count > 0
+        {
+            let subArr = workArray.prefix(num).map({$0})
+            result.append(subArr)
+            workArray = workArray.dropFirst(num).map({$0})
+        }
+        
+        return result
+    }
+}
+
 class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSource
 {
 
-    var videosIds:[String] = []//["7lCDEYXw3mM","ZJUMvQDCunQ","QfbcYlrJs0s","tZnpBMWQ3V8"]
+    var videosIds:[String] = []
     var resultObjs:[JSON] = []
     var listTable:UITableView!
     var viewRequest = YTVideosRequest()
     
     var subView = SUAppendIDView()
-    var subButton:FFButton!
-    
+    var subButtonAdd:FFButton!
+    var subButtonPlayAll:FFButton!
+    let onceRequestMax = 40
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         listTable = UITableView(frame: CGRect(x: 0, y: 60, width: self.view.frame.width, height:  self.view.frame.height - 70 - (self.navigationController?.navigationBar.frame.height)! ))
         listTable.dataSource = self
@@ -34,51 +52,46 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
         videosIds = SUVideosDao.sheard.select().map({$0["id"]!})
         getVideosList(ids: videosIds)
 
-//        self.subView.showInMainView()
         self.notificationCenter.addObserver(self, selector: #selector(self.getAppendIdViewOk), name: NSNotification.Name(subView.okNotificationName), object: nil)
         
-        subButton = FFButton()
-        subButton.setTitle("動画追加", for: .normal)
-        subButton.subMenuBranchDivision = 0
-        subButton.addTarget(self, action: #selector(self.showSubView), for: .touchUpInside)
-        self.subMenuBarButtons.append(subButton)
+        subButtonAdd = FFButton()
+        subButtonAdd.setTitle("動画追加", for: .normal)
+        subButtonAdd.subMenuBranchDivision = 0
+        subButtonAdd.addTarget(self, action: #selector(self.showSubView), for: .touchUpInside)
+        self.subMenuBarButtons.append(subButtonAdd)
+        
         layoutSubMenuButtons(branchDivision: 0)
-        
-        
-//        let r = SUVideosDao.sheard.select()
-//
-//        _ = SUVideosDao.sheard.upsertTable(arguments: ["7lCDEYXw3mM"])
-//        _ = SUVideosDao.sheard.delete(ID: "7lCDEYXw3mM")
-//        let r2 = SUVideosDao.sheard.select()
-        
-        
         
     }
     
     func getVideosList(ids:[String])
     {
 
+        resultObjs = []
         viewRequest = YTVideosRequest()
-        viewRequest.id = ids
-        viewRequest.apiType = .videos
-        
-        
-        let apiUrl = viewRequest.getFullUrl()
-        log.info(apiUrl)
-        let webCore = FFWebCore()
-        let result = webCore.getSync(urlStr: apiUrl)
-        if result.success
+        for workId in ids.split(num: onceRequestMax)
         {
-            let sJson = try! JSON(data:result.data ?? Data())
-//            log.info(sJson)
+            viewRequest.id = workId
+            viewRequest.apiType = .videos
             
-            for ti in sJson["items"].map({ $0.1["snippet"]["title"]})
+            
+            let apiUrl = viewRequest.getFullUrl()
+            log.info(apiUrl)
+            let webCore = FFWebCore()
+            let result = webCore.getSync(urlStr: apiUrl)
+            if result.success
             {
-                log.info(ti)
+                let sJson = try! JSON(data:result.data ?? Data())
+                
+                for ti in sJson["items"].map({ $0.1["snippet"]["title"]})
+                {
+                    log.info(ti)
+                }
+                
+                resultObjs += sJson["items"].map({$0.1})
             }
-            
-            resultObjs = sJson["items"].map({ $0.1})
         }
+        
         self.listTable.reloadData()
     }
 
@@ -111,7 +124,7 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
 
         self.navigationBarLeftArea.isHidden = true
         self.navigationBarRightArea.isHidden = true
-        self.title = "一覧"
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -136,6 +149,7 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
         let nextView = SUPlayerView()
         nextView.apiReuest = viewRequest
         nextView.selectedIndex = indexPath.row
+        nextView.videosIds = self.videosIds
         moveToView(nextViewController: nextView)
     }
     
@@ -183,6 +197,7 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
     {
         subView.showInMainView()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
