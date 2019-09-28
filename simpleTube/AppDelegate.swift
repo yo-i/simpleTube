@@ -36,8 +36,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
-        //スピーカー出力
-        try! AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
+        
+
+        for desc in AVAudioSession.sharedInstance().currentRoute.outputs{
+            if desc.portType == AVAudioSessionPortHeadphones{
+                // イヤホン刺さった
+            }else{
+                //スピーカー出力
+                try! AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
+            }
+        }
+        
+
+        
+        
+
         return true
     }
 
