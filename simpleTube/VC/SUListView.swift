@@ -10,22 +10,6 @@ import UIKit
 import SwiftyJSON
 import SVProgressHUD
 
-extension Array
-{
-    func split(num:Int)->Array<Array<Element>>
-    {
-        var workArray = self
-        var result:Array<Array<Element>> = []
-        while workArray.count > 0
-        {
-            let subArr = workArray.prefix(num).map({$0})
-            result.append(subArr)
-            workArray = workArray.dropFirst(num).map({$0})
-        }
-        
-        return result
-    }
-}
 
 class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSource
 {
@@ -37,22 +21,41 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
     
     var subView = SUAppendIDView()
     var subButtonAdd:FFButton!
-    var subButtonPlayAll:FFButton!
-    let onceRequestMax = 40
+    var subSearchView:FFButton!
+    let onceRequestMax = 40 //一回リクエストの上限
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let allId = SUVideosDao.sheard.select().map({$0["id"]!})
+        if videosIds.count != allId.count
+        {
+            videosIds = allId
+            getVideosList(ids: videosIds)
+        }
+    }
+    
+    override func initializeView() {
         
-        listTable = UITableView(frame: CGRect(x: 0, y: 60, width: self.view.frame.width, height:  self.view.frame.height - 70 - (self.navigationController?.navigationBar.frame.height)! ))
+        self.navigationBarLeftArea.isHidden = true
+        self.navigationBarRightArea.isHidden = true
+        
+        listTable = UITableView(frame: CGRect(x: 0
+            , y: 60
+            , width: self.view.frame.width
+            , height:  self.view.frame.height - 70 - (self.navigationController?.navigationBar.frame.height)! ))
         listTable.dataSource = self
         listTable.delegate = self
         self.view.addSubview(listTable)
         
+        
+//        videosIds = SUVideosDao.sheard.select().map({$0["id"]!})
+//        getVideosList(ids: videosIds)
+        
 
-        videosIds = SUVideosDao.sheard.select().map({$0["id"]!})
-        getVideosList(ids: videosIds)
-
-        self.notificationCenter.addObserver(self, selector: #selector(self.getAppendIdViewOk), name: NSNotification.Name(subView.okNotificationName), object: nil)
         
         subButtonAdd = FFButton()
         subButtonAdd.setTitle("動画追加", for: .normal)
@@ -60,20 +63,30 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
         subButtonAdd.addTarget(self, action: #selector(self.showSubView), for: .touchUpInside)
         self.subMenuBarButtons.append(subButtonAdd)
         
-        layoutSubMenuButtons(branchDivision: 0)
+        subSearchView = FFButton()
+        subSearchView.setTitle("動画検索", for: .normal)
+        subSearchView.subMenuBranchDivision = 0
+        subSearchView.addTarget(self, action: #selector(self.moveToSearchView), for: .touchUpInside)
+        self.subMenuBarButtons.append(subSearchView)
         
+        
+        layoutSubMenuButtons(branchDivision: 0)
+    
+        self.notificationCenter.addObserver(self, selector: #selector(self.getAppendIdViewOk), name: NSNotification.Name(subView.okNotificationName), object: nil)
     }
+    
+    
     
     func getVideosList(ids:[String])
     {
 
         resultObjs = []
         viewRequest = YTVideosRequest()
+        //上限の回数対応
         for workId in ids.split(num: onceRequestMax)
         {
             viewRequest.id = workId
             viewRequest.apiType = .videos
-            
             
             let apiUrl = viewRequest.getFullUrl()
             log.info(apiUrl)
@@ -120,12 +133,7 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
         return dic
     }
     
-    override func initializeView() {
 
-        self.navigationBarLeftArea.isHidden = true
-        self.navigationBarRightArea.isHidden = true
-
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultObjs.count
@@ -137,9 +145,11 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = SUListViewTableCell(style: .default, reuseIdentifier: "cell",titleLabelWidth : Int(tableView.frame.width))
 
+        //ラベル自動改行
         cell.titleLabel.text = resultObjs[indexPath.row]["snippet"]["title"].string
         cell.titleLabel.sizeToFit()
         
+        //画像の非同期読み込み
         cell.thumbnailView.asyncImgUrl = resultObjs[indexPath.row]["snippet"]["thumbnails"]["default"]["url"].string
         
         return cell
@@ -147,7 +157,6 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextView = SUPlayerView()
-        nextView.apiReuest = viewRequest
         nextView.selectedIndex = indexPath.row
         nextView.videosIds = self.videosIds
         moveToView(nextViewController: nextView)
@@ -180,16 +189,13 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
-    
+    //サブView結果
     @objc func getAppendIdViewOk()
     {
         if self.subView.responseId.count > 0
         {
             _ = SUVideosDao.sheard.upsertTable(arguments: [self.subView.responseId])
-            videosIds = SUVideosDao.sheard.select().map({$0["id"]!})
-            getVideosList(ids: videosIds)
-           
-            
+            self.viewWillAppear(true)
         }
     }
     
@@ -198,6 +204,10 @@ class SUListView: FFBaseMainViewController,UITableViewDelegate,UITableViewDataSo
         subView.showInMainView()
     }
     
+    @objc func moveToSearchView()
+    {
+        self.moveToView(viewClass: SUSearchView.self)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

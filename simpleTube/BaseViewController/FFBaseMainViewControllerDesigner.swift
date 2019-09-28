@@ -69,9 +69,9 @@ extension FFBaseMainViewController
     
     func createContentView()
     {
-        contentView = UIView(frame: CGRect(x: 12
+        contentView = UIView(frame: CGRect(x: 5
             , y: getContenViewStartY()
-            , width: 1000
+            , width: Int(self.view.frame.width) - 5 * 2
             , height: Int(self.view.frame.height) - getContenViewStartY() - FFBaseMainViewController.subMenuHeight))
         contentView.backgroundColor = UIColor.clear
         self.view.addSubview(contentView)

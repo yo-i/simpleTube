@@ -7,10 +7,9 @@
 //
 
 import Foundation
-
+import SwiftyJSON
 let GoogleApiKey:String = "AIzaSyCr58GUWUuFoQ2ROgqLWe4i50FLkAqkwVg"
 let GoogleApiBaseUrl:String = "https://www.googleapis.com/youtube/v3/"
-
 
 /// エンティティベース
 class YTEntityBase:NSObject
@@ -46,7 +45,10 @@ class YTEntityBase:NSObject
             }
             if m.value is String
             {
-                resultDic[key] = m.value
+                if (m.value as! String).count > 0
+                {
+                    resultDic[key] = m.value
+                }
             }
             else if m.value is [String]
             {
@@ -70,19 +72,23 @@ class YTEntityBase:NSObject
 
 enum YTRequestType:String
 {
-    case videos = "videos"
-    case playLists = "playlists"
+    case videos     = "videos"
+    case playLists  = "playlists"
+    case search     = "search"
 }
 
 class YTVideosRequest:YTEntityBase
 {
-    var apiType:YTRequestType = .videos
-    var id:[String] = []
-    var key:String = GoogleApiKey
-    var part:[String] = ["snippet"]
-    
+    var apiType:YTRequestType = .videos //apiタイプ
+    var q:[String] = []                 //検索用key
+    var id:[String] = []                //動画id
+    var key:String = GoogleApiKey       //認証key
+    var part:[String] = ["snippet"]     //レスポンスパラメータ
+    var maxResults:String = ""
+    var type:String = ""
     func getFullUrl() -> String
     {
         return GoogleApiBaseUrl + self.apiType.rawValue + "?" + self.getParamToDictionary().toUrlParam()
     }
 }
+

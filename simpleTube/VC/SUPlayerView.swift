@@ -11,15 +11,12 @@ import youtube_ios_player_helper
 import SwiftyJSON
 
 
-
+//動画play画面
 class SUPlayerView: FFBaseMainViewController ,YTPlayerViewDelegate{
     
 
     var playerView :YTPlayerView!
-    
-    var apiReuest = YTVideosRequest()
-    var selectedIndex = 0
-    var count = 0
+    var selectedIndex = 0               //将来リストやプレイ対応のため予備
     var nowState:YTPlayerState = .unknown
 
     var videosIds:Array<String> = []
@@ -31,15 +28,16 @@ class SUPlayerView: FFBaseMainViewController ,YTPlayerViewDelegate{
         playerView = YTPlayerView(frame: CGRect(x: 0, y: 60, width: self.view.frame.width, height: 300))
         playerView.delegate = self
         self.view.addSubview(playerView)
-        self.playerView.load(withVideoId: apiReuest.id[selectedIndex], playerVars: ["playsinline":1])
+        //プレイヤーの設定
+        self.playerView.load(withVideoId: videosIds[selectedIndex], playerVars: ["playsinline":1])
 
+        navigationBarHomeButton.isHidden = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView)
+    {
         log.info(#function)
+        //準備完了したら動画をプレイ
         self.playerView.playVideo()
     }
     

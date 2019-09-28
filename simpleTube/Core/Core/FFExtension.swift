@@ -995,3 +995,21 @@ extension UIApplication
         }
     }
 }
+
+extension Array
+{
+    func split(num:Int)->Array<Array<Element>>
+    {
+        var workArray = self
+        var result:Array<Array<Element>> = []
+        while workArray.count > 0
+        {
+            let subArr = workArray.prefix(num).map({$0})
+            result.append(subArr)
+            workArray = workArray.dropFirst(num).map({$0})
+        }
+        
+        return result
+    }
+}
+

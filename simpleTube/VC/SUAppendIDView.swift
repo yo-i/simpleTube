@@ -46,6 +46,7 @@ class SUAppendIDView:FFBaseSubViewController
             return
         }
         
+        //IDで動画取得を試す
         let viewRequest = YTVideosRequest()
         viewRequest.id = [self.responseId]
         viewRequest.apiType = .videos
@@ -57,6 +58,7 @@ class SUAppendIDView:FFBaseSubViewController
         let result = webCore.getSync(urlStr: apiUrl)
         if result.success
         {
+            //結果がなかったらIDが正しくない
             let sJson = try! JSON(data:result.data ?? Data())
             if sJson["items"].count == 0
             {

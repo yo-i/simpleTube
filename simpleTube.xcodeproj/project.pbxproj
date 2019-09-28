@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3BECD62BB34F4404CA84BD0B /* Pods_simpleTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5ECF7F9864D2BFC134B55A /* Pods_simpleTube.framework */; };
+		A128EC05233F182E0046F597 /* SUSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128EC04233F182E0046F597 /* SUSearchView.swift */; };
 		A13317022318A5F1000BA68A /* SUListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13317012318A5F1000BA68A /* SUListView.swift */; };
 		A13317052318B5DC000BA68A /* SUEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13317042318B5DC000BA68A /* SUEntity.swift */; };
 		A13317072318BB4D000BA68A /* SUListViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13317062318BB4D000BA68A /* SUListViewTableCell.swift */; };
 		A18EF429230F697F00601F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18EF428230F697F00601F88 /* AppDelegate.swift */; };
-		A18EF42B230F697F00601F88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18EF42A230F697F00601F88 /* ViewController.swift */; };
 		A18EF430230F697F00601F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18EF42F230F697F00601F88 /* Assets.xcassets */; };
 		A18EF433230F697F00601F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18EF431230F697F00601F88 /* LaunchScreen.storyboard */; };
 		A1CD54942318C61F00C3D548 /* SUAppendIDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD54932318C61F00C3D548 /* SUAppendIDView.swift */; };
@@ -79,12 +79,12 @@
 
 /* Begin PBXFileReference section */
 		1B29A23CB1452752C739F40D /* Pods-simpleTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleTube.release.xcconfig"; path = "Pods/Target Support Files/Pods-simpleTube/Pods-simpleTube.release.xcconfig"; sourceTree = "<group>"; };
+		A128EC04233F182E0046F597 /* SUSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUSearchView.swift; sourceTree = "<group>"; };
 		A13317012318A5F1000BA68A /* SUListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUListView.swift; sourceTree = "<group>"; };
 		A13317042318B5DC000BA68A /* SUEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUEntity.swift; sourceTree = "<group>"; };
 		A13317062318BB4D000BA68A /* SUListViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUListViewTableCell.swift; sourceTree = "<group>"; };
 		A18EF425230F697F00601F88 /* simpleTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18EF428230F697F00601F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A18EF42A230F697F00601F88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A18EF42F230F697F00601F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A18EF432230F697F00601F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A18EF434230F697F00601F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,6 +173,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A128EC02233F16640046F597 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				A1CD549523190C4400C3D548 /* SUVideosDao.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		A128EC03233F166F0046F597 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A13317042318B5DC000BA68A /* SUEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		A13317032318A6CC000BA68A /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +196,7 @@
 				A1EC742E23176DE300B8C1DB /* SUPlayerView.swift */,
 				A13317062318BB4D000BA68A /* SUListViewTableCell.swift */,
 				A1CD54932318C61F00C3D548 /* SUAppendIDView.swift */,
-				A1CD549523190C4400C3D548 /* SUVideosDao.swift */,
+				A128EC04233F182E0046F597 /* SUSearchView.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -206,13 +222,13 @@
 		A18EF427230F697F00601F88 /* simpleTube */ = {
 			isa = PBXGroup;
 			children = (
+				A128EC03233F166F0046F597 /* Entity */,
+				A128EC02233F16640046F597 /* DAO */,
 				A13317032318A6CC000BA68A /* VC */,
 				A18EF428230F697F00601F88 /* AppDelegate.swift */,
 				A1EC73B02317672A00B8C1DB /* AppInitial.swift */,
 				A1EC73B12317672B00B8C1DB /* FFApplication.swift */,
-				A18EF42A230F697F00601F88 /* ViewController.swift */,
 				A1EC743023176EF200B8C1DB /* main.swift */,
-				A13317042318B5DC000BA68A /* SUEntity.swift */,
 				A1EC74212317690400B8C1DB /* BaseViewController */,
 				A1EC73DA2317672B00B8C1DB /* Core */,
 				A1EC73B22317672B00B8C1DB /* UIPart */,
@@ -528,7 +544,7 @@
 				A1EC74062317672B00B8C1DB /* FFPadTextField.swift in Sources */,
 				A1EC73ED2317672B00B8C1DB /* AppInitial.swift in Sources */,
 				A1EC73F42317672B00B8C1DB /* FFPopPickerTextField.swift in Sources */,
-				A18EF42B230F697F00601F88 /* ViewController.swift in Sources */,
+				A128EC05233F182E0046F597 /* SUSearchView.swift in Sources */,
 				A1EC74152317672B00B8C1DB /* FFCore.swift in Sources */,
 				A13317052318B5DC000BA68A /* SUEntity.swift in Sources */,
 				A1EC740E2317672B00B8C1DB /* FFSimplePickerView.swift in Sources */,

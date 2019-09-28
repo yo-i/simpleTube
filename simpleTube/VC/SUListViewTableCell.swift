@@ -31,12 +31,14 @@ class SUListViewTableCell:UITableViewCell
     
     func initializeView()
     {
+        //サムネイル画像
         thumbnailView = FFImageView(frame: CGRect(x: 5, y: 5, width: 80, height: 50))
         thumbnailView.isUserInteractionEnabled = true
         thumbnailView.isPreviewEnable = true
         thumbnailView.contentMode = .scaleAspectFit
         self.contentView.addSubview(thumbnailView)
         
+        //タイトル
         titleLabel = FFLabel(frame: CGRect(x: 85, y: 5, width: titleLabelWidth - 90, height: 20)
             , text: "")
         titleLabel.font = FFFont.systemFontOfSize(12)
