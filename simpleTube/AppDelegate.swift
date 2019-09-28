@@ -36,7 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
-        
+        //スピーカー出力
+        try! AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
         return true
     }
 
